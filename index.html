@@ -20,13 +20,16 @@
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            padding: 5px 20px; /* Reduced padding */
+            padding: 10px 20px;
             background-color: #333;
             color: white;
             z-index: 1000;
-            height: 50px; /* Reduced height */
+            height: 50px;
+        }
+        nav {
+            margin-left: 20px;
         }
         nav ul {
             list-style: none;
@@ -41,10 +44,10 @@
             color: white;
             text-decoration: none;
             padding: 5px 10px;
-            transition: 0.3s;
+            transition: font-weight 0.3s;
         }
-        nav ul li a.active {
-            text-decoration: underline; /* Only underline instead of blue background */
+        nav ul li a.bold {
+            font-weight: bold;
         }
         section {
             padding: 80px 20px 20px;
@@ -54,36 +57,21 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-image: url('nimata.jpeg'); /* Replace with your actual photo filename */
+            background-image: url('nimata.jpeg');
             background-size: cover;
             background-position: center;
         }
-        .social-icons img {
-            width: 30px;
-            margin-right: 10px;
-        }
-        #contact {
-            text-align: center; /* Center-aligns the section */
-        }
-        #contact h2 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        #contact p {
-            margin: 5px 0;
-        }
-        .contact-links {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .contact-icons {
+        .social-icons {
+            display: flex;
+            justify-content: center;
             margin-top: 10px;
         }
-        .contact-icons a img {
-            width: 40px;
+        .social-icons img {
+            width: 30px;
             margin: 0 10px;
+        }
+        #contact {
+            text-align: center;
         }
     </style>
     <script>
@@ -100,8 +88,8 @@
                     
                     if (top >= offset && top < offset + height) {
                         navLinks.forEach(link => {
-                            link.classList.remove("active");
-                            document.querySelector("nav ul li a[href*=" + id + "]").classList.add("active");
+                            link.classList.remove("bold");
+                            document.querySelector("nav ul li a[href*=" + id + "]").classList.add("bold");
                         });
                     }
                 });
@@ -112,7 +100,7 @@
 </head>
 <body>
     <header>
-        <h1 style="font-size: 18px;">Nima Tavakoli</h1>
+        <h1>Nima Tavakoli</h1>
         <nav>
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
@@ -128,7 +116,14 @@
         <div class="profile-img"></div>
         <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank" style="color: blue;">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
         <h3>Research Interests</h3>
-        <p>Machine Learning, Artificial Intelligence, Deep Learning, Data Science, Mathematical Modeling.</p>
+        <ul>
+            <li>Machine Learning</li>
+            <li>Artificial Intelligence</li>
+            <li>Deep Learning</li>
+            <li>Data Science</li>
+            <li>Mathematical Modeling</li>
+        </ul>
+        
     </section>
     
     <section id="education">
@@ -147,13 +142,9 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>Feel free to reach out to me at <a href="mailto:nima.tavakoli.bt@gmail.com" style="color: white;">nima.tavakoli.bt@gmail.com</a></p>
-        
-        <div class="contact-links">
-            <p>GitHub Profile Link</p>
-            <p>LinkedIn Profile</p>
-        </div>
-        
-        <div class="contact-icons">
+        <p>GitHub Profile Link</p>
+        <p>LinkedIn Profile</p>
+        <div class="social-icons">
             <a href="#"><img src="github-icon.png" alt="GitHub"></a>
             <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         </div>
