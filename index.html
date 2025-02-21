@@ -22,10 +22,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 5px 20px; /* Reduced padding */
             background-color: #333;
             color: white;
             z-index: 1000;
+            height: 50px; /* Reduced height */
         }
         nav ul {
             list-style: none;
@@ -40,11 +41,10 @@
             color: white;
             text-decoration: none;
             padding: 5px 10px;
-            transition: background-color 0.3s;
+            transition: 0.3s;
         }
         nav ul li a.active {
-            background-color: blue;
-            border-radius: 5px;
+            text-decoration: underline; /* Only underline instead of blue background */
         }
         section {
             padding: 80px 20px 20px;
@@ -61,6 +61,29 @@
         .social-icons img {
             width: 30px;
             margin-right: 10px;
+        }
+        #contact {
+            text-align: center; /* Center-aligns the section */
+        }
+        #contact h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #contact p {
+            margin: 5px 0;
+        }
+        .contact-links {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .contact-icons {
+            margin-top: 10px;
+        }
+        .contact-icons a img {
+            width: 40px;
+            margin: 0 10px;
         }
     </style>
     <script>
@@ -89,7 +112,7 @@
 </head>
 <body>
     <header>
-        <h1>Nima Tavakoli</h1>
+        <h1 style="font-size: 18px;">Nima Tavakoli</h1>
         <nav>
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
@@ -122,18 +145,22 @@
     </section>
     
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p><img src="email-icon.png" alt="Email" width="20"> Email: <a href="mailto:nima.tavakoli.bt@gmail.com" style="color: white;">nima.tavakoli.bt@gmail.com</a></p>
-        <p><img src="linkedin-icon.png" alt="LinkedIn" width="20"> LinkedIn: <a href="#" style="color: white;">Your LinkedIn</a></p>
-        <p><img src="github-icon.png" alt="GitHub" width="20"> GitHub: <a href="#" style="color: white;">Your GitHub</a></p>
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me at <a href="mailto:nima.tavakoli.bt@gmail.com" style="color: white;">nima.tavakoli.bt@gmail.com</a></p>
+        
+        <div class="contact-links">
+            <p>GitHub Profile Link</p>
+            <p>LinkedIn Profile</p>
+        </div>
+        
+        <div class="contact-icons">
+            <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
     </section>
     
     <footer>
         <p>&copy; 2025 Nima Tavakoli. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-            <a href="#"><img src="github-icon.png" alt="GitHub"></a>
-        </div>
     </footer>
 </body>
 </html>
