@@ -53,14 +53,33 @@
             padding: 80px 20px 20px;
             border-bottom: 1px solid gray;
         }
+        .intro {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 60px;
+            padding: 40px 20px;
+        }
+        .intro .subheading {
+            font-size: 20px; /* Smaller text */
+            font-family: 'Arial', sans-serif; /* Different font for subheading */
+            color: #aaa; /* Slightly lighter color */
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 20px;
+        }
         .profile-img {
-            
-            width: 250px; /* Adjust size as needed */
-            height: 250px; /* Make it a square */
+            width: 250px;
+            height: 250px;
             border-radius: 20px; 
             background-image: url('nimata.jpeg');
             background-size: cover;
             background-position: center;
+        }
+        .about-description {
+            max-width: 600px;
         }
         .social-icons {
             display: flex;
@@ -73,6 +92,15 @@
         }
         #contact {
             text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
     <script>
@@ -90,8 +118,8 @@
                     if (top >= offset && top < offset + height) {
                         navLinks.forEach(link => {
                             link.classList.remove("bold");
-                            document.querySelector("nav ul li a[href*=" + id + "]").classList.add("bold");
                         });
+                        document.querySelector("nav ul li a[href='#" + id + "']").classList.add("bold");
                     }
                 });
             });
@@ -113,9 +141,19 @@
     </header>
     
     <section id="home">
+        <div class="intro">
+            <p>Hi, I'm Nima Tavakoli</p>
+            <p class="subheading">Computer Science Enthusiast | Passionate About Machine Learning Research</p>
+        </div>
+
         <h2>About Me</h2>
-        <div class="profile-img"></div>
-        <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank" style="color: blue;">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
+        <div class="about-container">
+            <div class="profile-img"></div>
+            <div class="about-description">
+                <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank" style="color: blue;">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
+            </div>
+        </div>
+        
         <h3>Research Interests</h3>
         <ul>
             <li>Machine Learning</li>
@@ -124,7 +162,6 @@
             <li>Data Science</li>
             <li>Mathematical Modeling</li>
         </ul>
-        
     </section>
     
     <section id="education">
