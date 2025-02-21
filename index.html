@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #222;
@@ -15,28 +15,39 @@
             transition: background-color 0.3s, color 0.3s;
         }
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             background-color: #333;
             color: white;
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
             padding: 0;
-            margin-left: 20px;
+            margin: 0;
+            display: flex;
         }
         nav ul li {
-            display: inline;
             margin-right: 15px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a.active {
+            background-color: blue;
+            border-radius: 5px;
         }
         section {
-            padding: 20px;
+            padding: 80px 20px 20px;
             border-bottom: 1px solid gray;
         }
         .profile-img {
@@ -47,14 +58,41 @@
             background-size: cover;
             background-position: center;
         }
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener("scroll", function() {
+                let sections = document.querySelectorAll("section");
+                let navLinks = document.querySelectorAll("nav ul li a");
+                
+                sections.forEach(section => {
+                    let top = window.scrollY;
+                    let offset = section.offsetTop - 100;
+                    let height = section.offsetHeight;
+                    let id = section.getAttribute("id");
+                    
+                    if (top >= offset && top < offset + height) {
+                        navLinks.forEach(link => {
+                            link.classList.remove("active");
+                            document.querySelector("nav ul li a[href*=" + id + "]").classList.add("active");
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Nima Tavakoli</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -65,7 +103,7 @@
     <section id="home">
         <h2>About Me</h2>
         <div class="profile-img"></div>
-        <p>Hello! I am Nima Tavakoli, a Computer Science graduate from Islamic Azad University, Science and Research Branch. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
+        <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank" style="color: blue;">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
         <h3>Research Interests</h3>
         <p>Machine Learning, Artificial Intelligence, Deep Learning, Data Science, Mathematical Modeling.</p>
     </section>
@@ -73,7 +111,7 @@
     <section id="education">
         <h2>Education</h2>
         <p><strong>Degree:</strong> Bachelor's Degree - Islamic Azad University, Science and Research Branch</p>
-        <p><strong>Graduation Year:</strong> [2024]</p>
+        <p><strong>Graduation Year:</strong> [Year]</p>
     </section>
     
     <section id="experience">
@@ -85,13 +123,17 @@
     
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: nima.tavakoli.bt@gmail.com</p>
-        <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
-        <p>GitHub: <a href="#">Your GitHub</a></p>
+        <p><img src="email-icon.png" alt="Email" width="20"> Email: <a href="mailto:nima.tavakoli.bt@gmail.com" style="color: white;">nima.tavakoli.bt@gmail.com</a></p>
+        <p><img src="linkedin-icon.png" alt="LinkedIn" width="20"> LinkedIn: <a href="#" style="color: white;">Your LinkedIn</a></p>
+        <p><img src="github-icon.png" alt="GitHub" width="20"> GitHub: <a href="#" style="color: white;">Your GitHub</a></p>
     </section>
     
     <footer>
         <p>&copy; 2025 Nima Tavakoli. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+        </div>
     </footer>
 </body>
 </html>
