@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nima Tavakoli</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Nima Tavakoli - Computer Science Enthusiast | Passionate About Machine Learning Research">
+    <meta name="keywords" content="Nima Tavakoli, Machine Learning, Artificial Intelligence, Data Science, Deep Learning">
+    <meta name="author" content="Nima Tavakoli">
+    <meta property="og:title" content="Nima Tavakoli - Personal Website">
+    <meta property="og:description" content="Computer Science Enthusiast | Passionate About Machine Learning Research">
+    <meta property="og:image" content="https://yourwebsite.com/nimata.jpeg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -14,23 +27,34 @@
             color: white;
             transition: background-color 0.3s, color 0.3s;
         }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Header */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             background-color: #333;
             color: white;
             z-index: 1000;
             height: 50px;
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
-        nav {
-            margin-left: 20px;
+        header.scrolled {
+            background-color: rgba(51, 51, 51, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        /* Navigation */
         nav ul {
             list-style: none;
             padding: 0;
@@ -49,38 +73,42 @@
         nav ul li a.bold {
             font-weight: bold;
         }
+        /* Sections */
         section {
-            padding: 80px 20px 20px;
+            padding: 100px 20px 20px;
             border-bottom: 1px solid gray;
         }
         .intro {
             text-align: center;
-            font-size: 36px;
+            font-size: 2rem;
             margin-top: 60px;
             padding: 40px 20px;
         }
         .intro .subheading {
-            font-size: 20px; /* Smaller text */
-            font-family: 'Arial', sans-serif; /* Different font for subheading */
-            color: #aaa; /* Slightly lighter color */
+            font-size: 1.2rem;
+            font-family: 'Arial', sans-serif;
+            color: #aaa;
         }
+        /* About Section */
         .about-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: start;
             gap: 20px;
         }
         .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 20px; 
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
             background-image: url('nimata.jpeg');
             background-size: cover;
             background-position: center;
         }
         .about-description {
             max-width: 600px;
+            text-align: center;
         }
+        /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -90,9 +118,7 @@
             width: 30px;
             margin: 0 10px;
         }
-        #contact {
-            text-align: center;
-        }
+        /* Footer */
         footer {
             background-color: #333;
             color: white;
@@ -102,9 +128,53 @@
             bottom: 0;
             width: 100%;
         }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            header h1 {
+                margin-bottom: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .intro {
+                font-size: 1.5rem;
+            }
+            .intro .subheading {
+                font-size: 1rem;
+            }
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
     </style>
+    <!-- JavaScript -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Sticky Header
+            const header = document.querySelector("header");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
+
+            // Highlight Active Navigation Link
             window.addEventListener("scroll", function() {
                 let sections = document.querySelectorAll("section");
                 let navLinks = document.querySelectorAll("nav ul li a");
@@ -125,7 +195,7 @@
             });
         });
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Nima Tavakoli - Computer Science Enthusiast</title>
 </head>
 <body>
     <header>
@@ -148,7 +218,7 @@
 
         <h2>About Me</h2>
         <div class="about-container">
-            <div class="profile-img"></div>
+            <div class="profile-img" role="img" aria-label="Profile picture of Nima Tavakoli"></div>
             <div class="about-description">
                 <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank" style="color: blue;">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
             </div>
@@ -180,11 +250,9 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>Feel free to reach out to me at <a href="mailto:nima.tavakoli.bt@gmail.com" style="color: white;">nima.tavakoli.bt@gmail.com</a></p>
-        <p>GitHub Profile Link</p>
-        <p>LinkedIn Profile</p>
         <div class="social-icons">
-            <a href="#"><img src="github-icon.png" alt="GitHub"></a>
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile"><img src="github-icon.png" alt="GitHub"></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn Profile"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         </div>
     </section>
     
