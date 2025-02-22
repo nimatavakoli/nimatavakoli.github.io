@@ -54,6 +54,19 @@
             margin: 0;
             font-size: 1.5rem;
         }
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
         /* Navigation */
         nav ul {
             list-style: none;
@@ -95,6 +108,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
+            text-align: center;
         }
         .profile-img {
             width: 200px;
@@ -103,16 +117,32 @@
             background-image: url('nimata.jpeg');
             background-size: cover;
             background-position: center;
+            margin-bottom: 20px;
         }
         .about-description {
             max-width: 600px;
-            text-align: center;
+        }
+        .about-description h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .about-description p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        .about-description a {
+            color: #4dabf7;
+            text-decoration: none;
+        }
+        .about-description a:hover {
+            text-decoration: underline;
         }
         /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .social-icons img {
             width: 30px;
@@ -131,19 +161,31 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                height: auto;
                 padding: 10px;
             }
-            header h1 {
-                margin-bottom: 10px;
+            .menu-toggle {
+                display: flex;
+            }
+            nav {
+                position: absolute;
+                top: 50px;
+                right: 0;
+                background-color: #333;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            nav.active {
+                max-height: 200px;
             }
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                padding: 10px 0;
             }
             nav ul li {
-                margin: 5px 0;
+                margin: 10px 0;
             }
             .intro {
                 font-size: 1.5rem;
@@ -164,6 +206,14 @@
     <!-- JavaScript -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Hamburger Menu Toggle
+            const menuToggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("nav");
+
+            menuToggle.addEventListener("click", () => {
+                nav.classList.toggle("active");
+            });
+
             // Sticky Header
             const header = document.querySelector("header");
             window.addEventListener("scroll", function() {
@@ -200,6 +250,11 @@
 <body>
     <header>
         <h1>Nima Tavakoli</h1>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
@@ -216,22 +271,21 @@
             <p class="subheading">Computer Science Enthusiast | Passionate About Machine Learning Research</p>
         </div>
 
-        <h2>About Me</h2>
         <div class="about-container">
             <div class="profile-img" role="img" aria-label="Profile picture of Nima Tavakoli"></div>
             <div class="about-description">
-                <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank" style="color: blue;">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
+                <h2>About Me</h2>
+                <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
+                <h3>Research Interests</h3>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Deep Learning</li>
+                    <li>Data Science</li>
+                    <li>Mathematical Modeling</li>
+                </ul>
             </div>
         </div>
-        
-        <h3>Research Interests</h3>
-        <ul>
-            <li>Machine Learning</li>
-            <li>Artificial Intelligence</li>
-            <li>Deep Learning</li>
-            <li>Data Science</li>
-            <li>Mathematical Modeling</li>
-        </ul>
     </section>
     
     <section id="education">
