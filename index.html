@@ -105,19 +105,17 @@
         /* About Section */
         .about-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            text-align: center;
+            align-items: flex-start;
+            gap: 40px;
         }
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             border-radius: 20px;
             background-image: url('nimata.jpeg');
             background-size: cover;
             background-position: center;
-            margin-bottom: 20px;
+            flex-shrink: 0;
         }
         .about-description {
             max-width: 600px;
@@ -137,6 +135,21 @@
         }
         .about-description a:hover {
             text-decoration: underline;
+        }
+        /* Research Interests */
+        .research-interests {
+            margin-top: 40px;
+        }
+        .research-interests h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .research-interests ul {
+            list-style: none;
+            padding: 0;
+        }
+        .research-interests ul li {
+            margin-bottom: 10px;
         }
         /* Social Icons */
         .social-icons {
@@ -195,11 +208,13 @@
             }
             .about-container {
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
             }
             .profile-img {
                 width: 150px;
                 height: 150px;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -276,15 +291,18 @@
             <div class="about-description">
                 <h2>About Me</h2>
                 <p>Hello! I am Nima Tavakoli, a Computer Science graduate from <a href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran" target="_blank">Islamic Azad University, Science and Research Branch</a>. I have a deep passion for Machine Learning and Artificial Intelligence. Throughout my academic and professional journey, I have worked on various projects related to data science, deep learning, and AI applications. My curiosity drives me to explore the mathematical foundations behind these technologies, allowing me to create efficient and innovative solutions.</p>
-                <h3>Research Interests</h3>
-                <ul>
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Deep Learning</li>
-                    <li>Data Science</li>
-                    <li>Mathematical Modeling</li>
-                </ul>
             </div>
+        </div>
+
+        <div class="research-interests">
+            <h3>Research Interests</h3>
+            <ul>
+                <li>Machine Learning</li>
+                <li>Artificial Intelligence</li>
+                <li>Deep Learning</li>
+                <li>Data Science</li>
+                <li>Mathematical Modeling</li>
+            </ul>
         </div>
     </section>
     
