@@ -161,9 +161,16 @@
             justify-content: center;
             margin-top: 20px;
         }
-        .social-icons img {
-            width: 30px;
+        .social-icons a {
             margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2); /* Enlarge icons on hover */
+        }
+        .social-icons img {
+            width: 30px; /* Adjust the size of the icons */
+            height: auto;
         }
         /* Footer */
         footer {
@@ -327,8 +334,14 @@
         <h2>Contact</h2>
         <p>Feel free to reach out to me at <a href="mailto:nima.tavakoli.bt@gmail.com" style="color: white;">nima.tavakoli.bt@gmail.com</a></p>
         <div class="social-icons">
-            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile"><img src="github-icon.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/nima-tavakoli-a9227a225 " target="_blank" aria-label="LinkedIn Profile"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <!-- GitHub Logo with Link -->
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile">
+                <img src="github-icon.png" alt="GitHub">
+            </a>
+            <!-- LinkedIn Logo with Link -->
+            <a href="https://www.linkedin.com/in/nima-tavakoli-a9227a225" target="_blank" aria-label="LinkedIn Profile">
+                <img src="linkedin-icon.png" alt="LinkedIn">
+            </a>
         </div>
     </section>
     
