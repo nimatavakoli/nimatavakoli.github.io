@@ -76,16 +76,18 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
-        align-items: flex-start;
+        align-items: stretch; /* make image and text align vertically */
       }
       .profile-pic {
         width: 220px;
-        height: 220px;
+        height: 100%;          /* stretch in height to fit the row */
+        max-height: 320px;     /* avoid becoming too tall */
         border-radius: 15px;
         object-fit: cover;
         object-position: center 20%; /* crop a little down */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         margin-top: 0;
+        flex-shrink: 0;
       }
       #about .intro-text {
         flex: 1; /* use remaining horizontal space */
@@ -129,8 +131,8 @@
 
       /* Courses of Interest: titles + descriptions */
       #education ul > li {
-        color: #facc15;       /* warm yellow accent */
-        font-weight: 600;     /* make titles stand out */
+        color: #cbd5ff;   /* same as Korosh Khodro subtitle */
+        font-weight: 600;
       }
 
       .course-note {
@@ -178,6 +180,11 @@
           flex-direction: column;
           align-items: center;
           text-align: center;
+        }
+        .profile-pic {
+          width: 220px;
+          height: 220px; /* nice square on mobile */
+          max-height: none;
         }
         #about .intro-text {
           flex: unset;
