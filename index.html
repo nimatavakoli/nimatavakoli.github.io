@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nima Tavakoli</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Nima Tavakoli - Computer Science graduate with expertise in Machine Learning, EV powertrain engineering, high-voltage batteries, and solar panel manufacturing."
+    />
+    <meta
+      name="keywords"
+      content="Nima Tavakoli, Machine Learning, EV motor production, battery pack, SolarWatt, Computer Science, MATLAB, Python"
+    />
+    <meta name="author" content="Nima Tavakoli" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #111111;
+        color: #e5e5e5;
+        scroll-behavior: smooth;
+      }
+
+      a {
+        color: #4dabf7;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #82c0ff;
+      }
+
+      /* Navbar */
+      .navbar {
+        border-bottom: 1px solid #333;
+      }
+      .navbar-brand {
+        font-weight: 600;
+      }
+
+      /* Hero */
+      header.jumbotron {
+        padding: 7rem 1rem 4rem;
+        background: radial-gradient(circle at top, #222 0, #111 60%, #000 100%);
+        text-align: center;
+      }
+      .main-heading {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+      .header-subtext {
+        font-size: 1.1rem;
+        color: #cccccc;
+        max-width: 700px;
+        margin: 1rem auto 0;
+      }
+
+      /* Section titles */
+      section h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        border-bottom: 1px solid #444;
+        padding-bottom: 0.5rem;
+      }
+
+      /* About – Hooman-style layout */
+      #about .intro-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      .profile-pic {
+        width: 220px;
+        height: 220px;
+        border-radius: 15px;
+        object-fit: cover;
+        object-position: center 20%; /* crop a little down */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-top: 0;
+      }
+      #about .intro-text {
+        flex: 1; /* use remaining horizontal space */
+        line-height: 1.7;
+        font-size: 1rem;
+      }
+
+      /* Skills Grid */
+      .skills-grid .card {
+        background-color: #18181b;
+        border: 1px solid #383d47;
+        color: #f9fafb;
+        height: 100%;
+      }
+      .skills-grid h5 {
+        margin-bottom: 0.5rem;
+      }
+      .skills-grid ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0;
+      }
+
+      /* Experience – better contrast */
+      .experience-card {
+        background-color: #18181b;
+        border: 1px solid #4b5563;
+        color: #f9fafb;
+      }
+      .experience-card h5 {
+        margin-bottom: 0.5rem;
+        color: #f3f4f6;
+      }
+      .experience-card h6 {
+        color: #cbd5ff;
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+      .experience-card ul li {
+        line-height: 1.6;
+      }
+
+      /* Courses of Interest: titles + descriptions */
+      #education ul > li {
+        color: #facc15;       /* warm yellow accent */
+        font-weight: 600;     /* make titles stand out */
+      }
+
+      .course-note {
+        margin-left: 0.5rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.8rem;
+        font-size: 0.98rem;
+        color: #f8f9fa;
+      }
+
+      /* Contact – simple, centered */
+      #contact {
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      #contact h2 {
+        text-align: center;
+      }
+      .contact-pic-link {
+        width: 26px;
+        height: 26px;
+      }
+      .contact-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin: 0.5rem 1rem;
+        color: #e5e5e5;
+      }
+      .contact-links a:hover {
+        color: #82c0ff;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem 0;
+        color: #aaaaaa;
+        border-top: 1px solid #333;
+      }
+
+      /* Tablet & Mobile – fix About layout */
+      @media (max-width: 768px) {
+        #about .intro-section {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        #about .intro-text {
+          flex: unset;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        header.jumbotron {
+          padding-top: 6rem;
+        }
+        .main-heading {
+          font-size: 2rem;
+        }
+        .profile-pic {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbarNav"
+    data-bs-offset="50"
+    tabindex="0"
+  >
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Nima Tavakoli</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="jumbotron">
+      <h1 class="main-heading">Hi, I'm Nima Tavakoli</h1>
+      <p class="header-subtext">
+        Computer Science graduate specializing in Machine Learning, EV powertrain engineering,
+        high-voltage battery systems, and SolarWatt-based solar panel manufacturing — connecting
+        computational intelligence with industrial processes.
+      </p>
+    </header>
+
+    <!-- ABOUT – Hooman-style -->
+    <section id="about" class="container">
+      <h2>About Me</h2>
+
+      <div class="intro-section">
+        <img src="NT.jpg" class="profile-pic" alt="Nima Tavakoli" />
+
+        <p class="intro-text">
+          I am a Computer Science B.Sc. graduate from
+          <a
+            href="https://en.wikipedia.org/wiki/Islamic_Azad_University,_Science_and_Research_Branch,_Tehran"
+            target="_blank"
+          >
+            Islamic Azad University, Science and Research Branch
+          </a>, with a strong focus on
+          <strong>Machine Learning</strong>, industrial automation, and
+          <strong>EV drive systems</strong>.
+          <br /><br />
+          I have hands-on experience with e-motor production lines and high-voltage battery (HVB)
+          in projects related to brands like Mercedes-Benz and Audi. My work includes station analysis,
+          defining functional sequences for assembly and testing stations, and creating clear technical
+          documentation for rotor, stator, and ZSB lines.
+          <br /><br />
+          In parallel, I have worked with <strong>SolarWatt-based solar panel production processes</strong>,
+          documenting and analyzing stages such as stringing, lamination, EL-testing, framing, and final
+          assembly. This combination of software skills, ML knowledge, and industrial experience has shaped
+          my interest in using data-driven methods to improve production quality and efficiency in EV and
+          renewable-energy manufacturing.
+        </p>
+      </div>
+
+      <!-- SKILLS -->
+      <h2>Skills</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 skills-grid">
+        <div class="col">
+          <div class="card h-100 p-3">
+            <h5>Programming & ML</h5>
+            <ul>
+              <li>Python, MATLAB</li>
+              <li>scikit-learn, NumPy, Pandas</li>
+              <li>TensorFlow, PyTorch</li>
+              <li>Classical ML & neural networks</li>
+              <li>Image processing & edge detection</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 p-3">
+            <h5>EV & Industrial Engineering</h5>
+            <ul>
+              <li>EV motor lines (stator, rotor, ZSB)</li>
+              <li>HV battery pack process analysis</li>
+              <li>SolarWatt module production</li>
+              <li>Station analysis & optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 p-3">
+            <h5>Tools & Automation</h5>
+            <ul>
+              <li>Git, GitHub</li>
+              <li>Jupyter</li>
+              <li>AutoCAD</li>
+              <li>Siemens automation basics</li>
+              <li>PLC documentation & layout reading</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 p-3">
+            <h5>Languages</h5>
+            <ul>
+              <li>English – IELTS 7.0</li>
+              <li>German – B2 (ongoing)</li>
+              <li>Persian – Native</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="container">
+      <h2>Education</h2>
+
+      <p>
+        <strong>B.Sc. in Computer Science</strong><br />
+        Islamic Azad University, Science and Research Branch, Tehran<br />
+        2019 – 2024
+      </p>
+
+      <h5>Courses of Interest</h5>
+      <ul>
+        <li>Machine Learning</li>
+        <p class="course-note">
+          This course was my main entry point into data-driven modeling. It helped me connect
+          mathematical concepts with practical algorithms and inspired many of my later projects in
+          classification, regression, and industrial data analysis.
+        </p>
+
+        <li>Databases</li>
+        <p class="course-note">
+          Understanding database design and SQL was essential for working with real-world data,
+          especially when documenting production systems and structuring data flows in industrial contexts.
+        </p>
+
+        <li>Data Structures & Algorithms</li>
+        <p class="course-note">
+          This course strengthened my problem-solving skills and taught me how to write efficient code,
+          which is crucial for optimization in both software and production-line processes.
+        </p>
+
+        <li>Advanced Programming</li>
+        <p class="course-note">
+          I learned advanced software engineering concepts such as clean code, modular design, and
+          object-oriented programming — knowledge that I now apply when building analysis pipelines
+          and technical tools.
+        </p>
+
+        <li>Operating Systems</li>
+        <p class="course-note">
+          This course gave me a better understanding of concurrency, processes, and resource management,
+          which relates closely to how complex industrial systems and automation controllers operate.
+        </p>
+
+        <li>Computer Networks</li>
+        <p class="course-note">
+          Studying networks helped me understand communication between distributed systems, which is
+          increasingly relevant in networked factories, IIoT, and connected production lines.
+        </p>
+
+        <li>Principles of Computer Systems</li>
+        <p class="course-note">
+          This course connected low-level system concepts with high-level software behavior, giving me
+          a more complete picture of how hardware, operating systems, and applications interact.
+        </p>
+
+        <li>Numerical Analysis</li>
+        <p class="course-note">
+          Numerical methods are important in optimization and simulation. This background supports my
+          work with ML training, parameter tuning, and engineering calculations in battery and motor systems.
+        </p>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="container">
+      <h2>Experience</h2>
+
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="col">
+          <div class="card experience-card h-100 p-3">
+            <h5>EV Drive Production Line Integrator</h5>
+            <h6>Korosh Khodro — 01/2023 – Present</h6>
+            <ul>
+              <li>Developed technical documentation for rotor, stator, and ZSB EV motor lines.</li>
+              <li>Defined processes and functional steps for assembly and testing stations.</li>
+              <li>Analyzed Übersetzen, Elektrische Messung, Imprägnieren, Vormontage stations.</li>
+              <li>Supported integration of Audi HV battery pack processes, including BKF and EOL stations.</li>
+              <li>Prepared automation layout analyses and workflow diagrams for mechanical and electrical stations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card experience-card h-100 p-3">
+            <h5>Solar Panel Production Line Engineering (SolarWatt Processes)</h5>
+            <h6>Project-based Engineering Work</h6>
+            <ul>
+              <li>Worked with solar panel production processes according to SolarWatt standards.</li>
+              <li>Documented workflows in stringing, lamination, EL-testing, framing, and final module assembly.</li>
+              <li>Prepared station mapping and process diagrams.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card experience-card h-100 p-3">
+            <h5>Machine Learning & Image Processing Projects</h5>
+            <h6>Personal & Academic</h6>
+            <ul>
+              <li>Built ML models for classification, regression, and anomaly detection.</li>
+              <li>Developed data preprocessing and analysis pipelines using Python.</li>
+              <li>Implemented neural network models with TensorFlow and PyTorch.</li>
+              <li>MATLAB Edge Detection project using Sobel, Canny, and Prewitt with filtering and thresholding.</li>
+              <li>Conducted battery-data prediction and industrial data analysis as personal projects.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card experience-card h-100 p-3">
+            <h5>Industrial Engineering & Production Line Projects</h5>
+            <h6>EV Motors, HV Batteries & SolarWatt Processes</h6>
+            <ul>
+              <li>Documented complete stator and rotor production processes for a Mercedes-Benz e-motor project.</li>
+              <li>Analyzed HV battery pack architecture and station workflows.</li>
+              <li>Defined material flow, cycle sequences, and functional steps for EV motor assembly.</li>
+              <li>Linked EV drive production and SolarWatt-based solar manufacturing in process documentation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (simple centered) -->
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+
+      <p>
+        If you are interested in my background, projects, or would like to discuss
+        study or research opportunities, feel free to reach out.
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:nima.tavakoli.bt@gmail.com">nima.tavakoli.bt@gmail.com</a>
+      </p>
+
+      <div class="contact-links mt-3">
+        <a href="https://github.com/nimatavakoli" target="_blank">
+          <img src="github-icon.png" alt="GitHub" class="contact-pic-link" />
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/nima-tavakoli-a9227a225"
+          target="_blank"
+        >
+          <img src="linkedin-icon.png" alt="LinkedIn" class="contact-pic-link" />
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 Nima Tavakoli — All rights reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
